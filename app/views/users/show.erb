@@ -1,0 +1,27 @@
+<div>
+  <h1><%= @user.username %></h1>
+
+  <% Deck.all.each do |deck| %>
+    <% rounds_played = deck.rounds.select{ |round| round.user_id == @user.id } %>
+    <% if rounds_played %>
+      <h3><%=deck.name%></h3>
+      <table>
+        <tr>
+          <th>Date Played</th>
+          <th>Cards in Deck</th>
+          <th>First Guess Correct</th>
+          <th>Total Guesses</th>
+        </tr>
+      <% rounds_played.each do |round| %>
+        <tr>
+          <td><%= round.created_at %></td>
+          <td><%= deck.cards.count %></td>
+          <td>First Guess Correct</td>
+          <td>Total Guesses</td>
+        </tr>
+      <% end %>
+      </table>
+    <% end %>
+  <% end %>
+
+</div>

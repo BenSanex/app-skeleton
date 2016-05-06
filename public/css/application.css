@@ -1,0 +1,26 @@
+h1 {
+  display: inline;
+}
+header, footer {
+  background-color: #293F4F;
+  padding: 15px;
+  color: #fff;
+}
+header a {
+  color: #fff;
+}
+.float-right {
+  float: right;
+}
+
+/* Keep footer at the bottom of the page */
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+footer p {
+  margin: 0;
+}
+

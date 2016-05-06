@@ -18,15 +18,26 @@
   <title></title>
 </head>
 <body>
-  <% if session[:user_id] %>
-    <span class='username'><%= current_user.username %></span>
-    <a href="/logout">logout</a>
-  <% else %>
-    <a href="/register">register</a>
-    <a href="/login">login</a>
-  <% end %>
-  <a href="/">home</a>
-
+  <header>
+    <h1>FlashCurds</h1>
+    <div class="float-right">
+      <% if session[:user_id] %>
+        <span class='username'><%= current_user.username %></span>
+        <a href="/logout">logout</a>
+      <% else %>
+        <a href="/register">register</a>
+        <a href="/login">login</a>
+      <% end %>
+      <a href="/">home</a>
+    </div>
+  </header>
+  <main>
   <%= yield %>
+</main>
+  <footer>
+
+    <p>Made by Ben, Jack, Jason, Lisa, &amp; Scott</p>
+    </div>
+  </footer>
 </body>
 </html>

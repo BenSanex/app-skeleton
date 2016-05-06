@@ -24,7 +24,7 @@ post '/decks/:id/round' do
 end
 
 get 'decks/:deck_id/cards/:id' do
-  @card. = Card.find(params[:id])
+  @card = Card.find(params[:id])
   erb :'cards/show'
 end
 

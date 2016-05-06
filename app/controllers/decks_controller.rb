@@ -21,7 +21,7 @@ get '/decks/:deck_id/round' do
 
     @cards.each do |card|
       Guess.create(card_id: card.id, first_try: true, round_id: @round.id, correct: false)
-    endgt
+    end
   end
 
   @remaining_cards = Guess.where(correct: !true)

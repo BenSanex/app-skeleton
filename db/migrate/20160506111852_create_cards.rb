@@ -6,5 +6,6 @@ class CreateCards < ActiveRecord::Migration
       tea.string  :answer, null: false
 
       tea.timestamps
+    end
   end
 end

@@ -7,5 +7,6 @@ class CreateGuesses < ActiveRecord::Migration
       t.boolean :correct, null: false
 
       t.timestamps
+    end
   end
 end

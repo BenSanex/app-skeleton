@@ -9,7 +9,18 @@ get '/decks/:id' do
 end
 
 get '/decks/:id/round' do
-  @deck = Card.where(deck_id: params[:id])
+  @deck = Card.where(guess.correct != true)
   erb :round_show
+end
+
+post '/decks/:id/round' do
+  @card = Card.find(params[:card_id])
+  status = @card.verify_guess(params[:player_guess])
+  Guess.create(card_id: params[:card_id], correct: status)
+end
+
+get 'decks/:deck_id/cards/:id' do
+  @card. = Card.find(params[:id])
+  erb :card_show
 end
 

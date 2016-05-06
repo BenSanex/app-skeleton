@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :hashword, { presence: true }
   # validate :password_security
 
-    def authenticate(plaintext_password)
+  def authenticate(plaintext_password)
     self.password == plaintext_password
     # self.password.to_s == BCrypt::Password.create(plaintext_password).to_s
   end

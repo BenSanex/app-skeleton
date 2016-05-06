@@ -29,3 +29,8 @@ post '/login' do
       erb :'sessions/login'
     end
 end
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/login'
+end

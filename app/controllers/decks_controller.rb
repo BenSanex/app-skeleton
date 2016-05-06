@@ -1,3 +1,7 @@
+before '/decks/*' do
+  authenticate!
+end
+
 get '/decks' do
   @decks = Deck.all
   erb :'decks/decks_show'

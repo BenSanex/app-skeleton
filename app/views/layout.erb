@@ -22,7 +22,7 @@
     <h1>FlashCurds</h1>
     <div class="float-right">
       <% if session[:user_id] %>
-        <span class='username'><%= current_user.username %></span>
+        <a href="/users/<%=current_user.id%>"><%= current_user.username %></a>
         <a href="/logout">logout</a>
       <% else %>
         <a href="/register">register</a>
@@ -33,7 +33,7 @@
   </header>
   <main>
   <%= yield %>
-</main>
+  </main>
   <footer>
 
     <p>Made by Ben, Jack, Jason, Lisa, &amp; Scott</p>

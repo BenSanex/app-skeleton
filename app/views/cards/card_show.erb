@@ -1,0 +1,6 @@
+<%= @card.question %>
+<form action="/decks/<%= @card.deck_id %>/round" method="post">
+<input type="text" name="player_guess" placeholder="answer...">
+<input type="hidden" name="card_id" value="<%=@card.id%>">
+<input type="submit" value="SUBMIT">
+</form>

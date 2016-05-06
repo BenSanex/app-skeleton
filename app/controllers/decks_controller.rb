@@ -4,12 +4,12 @@ end
 
 get '/decks' do
   @decks = Deck.all
-  erb :'decks/decks_show'
+  erb :'decks/index'
 end
 
 get '/decks/:id' do
   @deck = Deck.find(params[:id])
-  erb :'decks/deck_show_details'
+  erb :'decks/show'
 end
 
 get '/decks/:id/round' do
@@ -25,6 +25,6 @@ end
 
 get 'decks/:deck_id/cards/:id' do
   @card. = Card.find(params[:id])
-  erb :card_show
+  erb :'cards/show'
 end
 

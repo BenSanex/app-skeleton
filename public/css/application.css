@@ -1,0 +1,70 @@
+body {
+  background-color: #E5E59C;
+}
+main {
+  padding: 20px;
+}
+h1 {
+  display: inline;
+}
+h3 {
+  color: #293F4F;
+  font-size: 30px;
+}
+header, footer {
+  background-color: #293F4F;
+  padding: 15px;
+  color: #fff;
+}
+header a {
+  color: #fff;
+  margin-right: 5px;
+}
+header a:last-of-type {
+  margin-right: 0;
+}
+.float-right {
+  float: right;
+}
+.deck-list {
+  list-style-type: none;
+  font-size: 25px;
+}
+.deck-list a {
+  color: #293F4F;
+  text-decoration: none;
+}
+.deck-list a:hover {
+  color: #6E93AD;
+}
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type=submit] {
+  margin-top: 20px;
+  border: none;
+  background-color: #E0523E;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 4px;
+}
+input[type=submit]:hover {
+  background-color: #FA6F45;
+}
+label {
+  color: #293F4F;
+
+}
+
+/* Keep footer at the bottom of the page */
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+footer p {
+  margin: 0;
+}
+

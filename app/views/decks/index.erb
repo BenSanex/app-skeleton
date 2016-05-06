@@ -1,4 +1,7 @@
-<% @decks.each do |deck| %>
-  <div><a href="<%= "/decks/#{deck.id}" %>"> <%= deck.name %></a></div>
-<% end %>
+<h3>Decks</h3>
+<ul class="deck-list">
+  <% @decks.each do |deck| %>
+    <li><a href="<%= "/decks/#{deck.id}" %>"> <%= deck.name %></a></li>
+  <% end %>
+</ul>
 

@@ -1,6 +1,10 @@
 <%= @card.question %>
-<form action="/decks/<%= @card.deck_id %>/round" method="post">
-<input type="text" name="player_guess" placeholder="answer...">
-<input type="hidden" name="card_id" value="<%=@card.id%>">
-<input type="submit" value="SUBMIT">
-</form>
+  <%if @status == true%>
+    <br>Correct!
+    <form action="/decks/<%= @card.deck_id %>/round">
+    <input type="submit" value="NEXT">
+  <%else%>
+    <br>False! The correct answer is <%=@card.answer%>
+    <form action="/decks/<%= @card.deck_id %>/round">
+    <input type="submit" value="NEXT">
+  <%end%>

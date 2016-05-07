@@ -1,7 +1,11 @@
 <h3>Decks</h3>
 <ul class="deck-list">
   <% @decks.each do |deck| %>
-    <li><a href="<%= "/decks/#{deck.id}" %>"> <%= deck.name %></a></li>
+  <li>
+    <div class="table">
+      <a href="<%= "/decks/#{deck.id}" %>"> <%= deck.name %></a>
+    </div>
+  </li>
   <% end %>
 </ul>
 

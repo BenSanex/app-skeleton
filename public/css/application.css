@@ -1,23 +1,38 @@
 body {
-  background-color: #E5E59C;
+  background-color: #374140;
+}
+ul {
+  padding-right: 40px;
+}
+a, body {
+  color: #FCFFF5;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #FFF;
 }
 main {
-  padding: 20px;
+  padding: 20px 35px;
 }
 h1 {
   display: inline;
 }
 h3 {
-  color: #293F4F;
   font-size: 30px;
 }
 header, footer {
-  background-color: #293F4F;
+  background-color: #2A2C2B;
   padding: 15px;
-  color: #fff;
+}
+header{
+  border-bottom: solid 1px #FCFFF5;
+}
+footer {
+  border-top: solid 1px #FCFFF5;
 }
 header a {
-  color: #fff;
   margin-right: 5px;
 }
 header a:last-of-type {
@@ -30,12 +45,33 @@ header a:last-of-type {
   list-style-type: none;
   font-size: 25px;
 }
-.deck-list a {
-  color: #293F4F;
-  text-decoration: none;
+.deck-list li {
+  display: inline-block;
+  height: 150px;
+  width: 100px;
+  background-color: #DC3522;
+  color: #FCFFF5;
+  padding: 7px 10px;
+  border: solid 1px #FCFFF5;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4),
+              0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
-.deck-list a:hover {
-  color: #6E93AD;
+.deck-list li:hover {
+  box-shadow: none;
+  background-color: #E83822;
+}
+.table {
+  display: table;
+  height: 150px;
+  width: 100px;
+  text-align: center;
+}
+.table a {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 25px;
 }
 input {
   display: block;
@@ -44,17 +80,16 @@ input {
 input[type=submit] {
   margin-top: 20px;
   border: none;
-  background-color: #E0523E;
-  color: #fff;
+  background-color: #DC3522;
+  color: #FCFFF5;
   padding: 7px 10px;
+  border: solid 1px #FCFFF5;
   border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 input[type=submit]:hover {
-  background-color: #FA6F45;
-}
-label {
-  color: #293F4F;
-
+  box-shadow: none;
+  background-color: #E83822;
 }
 
 /* Keep footer at the bottom of the page */

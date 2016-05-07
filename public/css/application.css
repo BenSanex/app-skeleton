@@ -1,0 +1,105 @@
+body {
+  background-color: #374140;
+}
+ul {
+  padding-right: 40px;
+}
+a, body {
+  color: #FCFFF5;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #FFF;
+}
+main {
+  padding: 20px 35px;
+}
+h1 {
+  display: inline;
+}
+h3 {
+  font-size: 30px;
+}
+header, footer {
+  background-color: #2A2C2B;
+  padding: 15px;
+}
+header{
+  border-bottom: solid 1px #FCFFF5;
+}
+footer {
+  border-top: solid 1px #FCFFF5;
+}
+header a {
+  margin-right: 5px;
+}
+header a:last-of-type {
+  margin-right: 0;
+}
+.float-right {
+  float: right;
+}
+.deck-list {
+  list-style-type: none;
+  font-size: 25px;
+}
+.deck-list li {
+  display: inline-block;
+  height: 150px;
+  width: 100px;
+  background-color: #DC3522;
+  color: #FCFFF5;
+  padding: 7px 10px;
+  border: solid 1px #FCFFF5;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4),
+              0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.deck-list li:hover {
+  box-shadow: none;
+  background-color: #E83822;
+}
+.table {
+  display: table;
+  height: 150px;
+  width: 100px;
+  text-align: center;
+}
+.table a {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: 25px;
+}
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type=submit] {
+  margin-top: 20px;
+  border: none;
+  background-color: #DC3522;
+  color: #FCFFF5;
+  padding: 7px 10px;
+  border: solid 1px #FCFFF5;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type=submit]:hover {
+  box-shadow: none;
+  background-color: #E83822;
+}
+
+/* Keep footer at the bottom of the page */
+footer {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+footer p {
+  margin: 0;
+}
+

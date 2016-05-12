@@ -14,6 +14,10 @@ gem 'rake'
 
 gem 'shotgun'
 
+# Denny Gems
+gem 'bcrypt-ruby'
+gem 'faker'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

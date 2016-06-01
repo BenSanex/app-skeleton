@@ -1,3 +1,27 @@
+
 ul {
   list-style-type: none;
+
+#nav-header {
+  padding-left: 60%;
+  background-color: black;
+}
+
+#nav-header a {
+  color: white;
+}
+
+#form-container {
+  width: 460px;
+  margin: 20% 40%;
+
+}
+
+#login-form {
+  text-align: left;
+}
+
+#login-form input {
+  padding: 2px;
+
 }

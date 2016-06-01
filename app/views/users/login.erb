@@ -1,8 +1,10 @@
+<%= erb :'_errors' %>
+
 <div id="form-container">
   <form id="login-form" method="POST" action="/users/login">
     <label for="email">Email</label><br>
     <input type="email" name="email" id="email" size="30" maxlength="100" placeholder="you@example.org"> <br>
-    <label for="passowrd">Password</label> <br>
+    <label for="password">Password</label> <br>
     <input type="password" name="password" id="password" size="30" placeholder="********"><br>
     <input type="submit" value="Login" class="button">
   </form>

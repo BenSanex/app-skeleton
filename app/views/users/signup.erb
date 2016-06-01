@@ -1,0 +1,12 @@
+<div id="form-container">
+  <form id="login-form" method="POST" action="/users/signup">
+    <label for="display-name">Display Name</label><br>
+    <input type="text" name="user[display_name]" id="display-name" size="30" placeholder="J. Doe"><br>
+    <label for="email">Email (required, but never shown)</label><br>
+    <input type="email" name="user[email]" id="email" size="30" maxlength="100" placeholder="you@example.org"> <br>
+    <label for="passowrd">Password</label> <br>
+    <input type="password" name="user[password]" id="password" size="30" placeholder="********"><br>
+    <input type="submit" value="Sign Up" class="button">
+  </form>
+</div>
+

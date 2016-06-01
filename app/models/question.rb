@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
   has_many :answerers, through: :answers
   has_many :votes, as: :votable
   has_many :comments, as: :commentable
-  has_many :tags
+  has_many :questiontags
 
   validates_presence_of :author, :body
   validats :tags, numericality: { less_than_or_equal_to: 5 }

@@ -31,3 +31,7 @@ get '/users/logout' do
   session.clear
   redirect '/questions'
 end
+
+get '/users/:id' do
+  erb :'users/profile'
+end

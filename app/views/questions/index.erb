@@ -1,0 +1,21 @@
+<div>
+  <h1>All Questions</h1>
+  <div class='question'>
+    <ul>
+      <% @questions.each do |question| %>
+        <div class='votes'><%= question.votes.count %><p>votes</p></div>
+        <div class='answers'><%= question.answers.count %><p>answers</p></div>
+        <li>
+          <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
+          <ul>
+          <% question.tags.each do |tag| %>
+            <li> <%= tag.name %></li>
+          <% end %>
+         </ul>
+        </li>
+        <p>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
+        <hr>
+      <% end %>
+    </ul>
+  </div>
+</div>

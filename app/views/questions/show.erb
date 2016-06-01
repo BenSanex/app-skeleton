@@ -1,0 +1,42 @@
+<div class='question_page'>
+  <div class='question'>
+    <h1> <%= @question.title %></h1>
+    <hr>
+    <div class='votes'>
+      <p><%= @question.votes.count %></p>
+    </div>
+      <div class='favorite'>
+        <p><%= @question.favorites.count %></p>
+      </div>
+      <div class='body'>
+        <p><%= @question.body %></p>
+      </div>
+    <div>
+      <ul>
+        <% @question.tags.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class='author_box'>
+      <p><%= @question.author.try(:display_name) %></p>
+    </div>
+    <div class='comment_link'>
+      <a href='/'>Dont click, it goes home</a>
+    </div>
+  </div>
+  <div class='answer'>
+    <h2><%= @question.answers.count %> Answer</h2>
+    <hr>
+    <div class='answer-body'>
+        <% @question.answers.each do |answer| %>
+        <p><%= answer.body %></p>
+        <div class='vote-count'><p><%= answer.votes.count %></p></div>
+        <div class='answerer-box'>
+          <p><%= answer.answerer.try(:display_name) %></p>
+        </div>
+        <hr>
+        <% end %>
+    </div>
+  </div>
+</div>

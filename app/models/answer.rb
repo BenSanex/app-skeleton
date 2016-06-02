@@ -6,4 +6,8 @@ class Answer < ActiveRecord::Base
 
   validates_presence_of :answerer, :body, :question
   validates :body, length: { minimum: 5 }
+
+  def points
+    votes.sum(:value)
+  end
 end

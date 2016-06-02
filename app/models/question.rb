@@ -16,4 +16,8 @@ class Question < ActiveRecord::Base
   def validate_tag_count
     errors.add(:tag_questions, "too much") if tag_questions.size > 5
   end
+
+  def points
+    votes.sum(:value)
+  end
 end

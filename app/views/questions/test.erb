@@ -1,0 +1,10 @@
+    <article id="<%= post.id %>">
+      <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form">
+        <input type="hidden" name="vote" value="1">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x"></button>
+      </form>
+      <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form">
+        <input type="hidden" name="vote" value="-1">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x"></button>
+      </form>
+    </article>

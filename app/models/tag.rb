@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-  has_many :questiontags
+  has_many :tagsquestions
 
   validates_presence_of :name
   validates_uniqueness_of :name

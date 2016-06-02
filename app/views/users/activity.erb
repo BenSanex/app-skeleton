@@ -1,1 +1,19 @@
+<div id="activity-answers">
+  <h3 style="color:blue">Answers</h3>
+  <ul>
+    <% @user.answers.each do |answer| %>
+    <li><a href = "answers/<%=answer.id%>"><%=answer.body %></a></li>
+    <br>
+    <% end %>
+  </ul>
+</div>
 
+<div id="activity-questions">
+  <h3 style="color:blue">Questions</h3>
+  <ul>
+    <% @user.questions.each do |question| %>
+    <li><a href = "/questions/<%=question.id%>"><%=question.title%></a></li>
+    <br>
+    <% end %>
+  </ul>
+</div>

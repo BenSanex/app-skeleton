@@ -42,7 +42,6 @@ ul {
 .subheader {
   margin: 20px;
   height: 40px;
-  border: solid blue 1px;
 }
 
 .user-picture {
@@ -78,7 +77,16 @@ ul {
   margin: 0px 2px;
 }
 
+#activity-answers {
+  width: 400px;
+  float: left;
+  display: inline-block;
+}
 
+#activity-questions {
+  width: 400px;
+  display: inline-block;
+}
 
 
 

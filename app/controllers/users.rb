@@ -57,6 +57,7 @@ post '/users/:id/profile' do
   end
 end
 
-get 'users/:id/activity' do
+get '/users/:id/activity' do
+  @user = User.find(params[:id])
   erb :'users/activity'
 end

@@ -11,19 +11,17 @@
         <form method="post" action="/users/<%= @user.id %>/profile">
           <div class="user-edit-box"
             <label for="display-name">Display Name</label><br>
-            <input type="text" name="user[display_name]" id="display-name" size="30"><br>
+            <input type="text" name="@user[display_name]" id="display-name" size="30"><br>
             <label for="location">Location</label><br>
-            <input type="text" name="user[location]" id="location" size="30"> <br>
+            <input type="text" name="@user[location]" id="location" size="30"> <br>
             <label for="title">Title</label> <br>
-            <input type="text" name="user[title]" id="title" size="30"><br>
+            <input type="text" name="@user[title]" id="title" size="30"><br>
           </div>
             <label for="about_me">About Me</label><br>
-            <textarea type="text" name="user[about_me]" id="about_me" cols="92" rows="15" placeholder=""></textarea><br>
+            <textarea type="text" name="@user[about_me]" id="about_me" cols="92" rows="15" placeholder=""></textarea><br>
 
             <input type="submit" value="Submit" class="button">
          </form>
-
-
       </div>
   </div>
 </div>

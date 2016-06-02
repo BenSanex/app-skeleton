@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :author, class_name: "User"
+  belongs_to :author, foreign_key: "author_id", class_name: "User"
   has_many :favorites
   has_many :favoriters, through: :favorites, source: :user
   has_many :answers

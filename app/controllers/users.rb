@@ -42,4 +42,8 @@ get '/users/:id/edit' do
   erb :'users/edit'
 end
 
-
+post '/users/:id/profile' do
+  user = User.find(params[:id])
+  user.update_attributes(params[:@user])
+  redirect "/users/#{user.id}/profile"
+end

@@ -1,6 +1,6 @@
-class CreateQuestionTags < ActiveRecord::Migration
+class CreateTagQuestions < ActiveRecord::Migration
   def change
-    create_table :questions_tags do |t|
+    create_table :tag_questions do |t|
       t.integer :tag_id, null: false
       t.integer :question_id, null: false
 

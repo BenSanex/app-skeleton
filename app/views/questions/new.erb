@@ -1,0 +1,15 @@
+<div>
+  <form action='/questions' method='POST' id='question-form'>
+    <label>Title</label>
+    <input type='text' name="question[title]" placeholder="What's your snack question? Be specific."><br>
+    <textarea name="question[body]"></textarea>
+    <hr>
+    <hr>
+    <!-- <label>Tags</label><br> -->
+    <!-- <input type='text' name="question[tags]" placeholder="at least one tag such as (#snackinator, #cookiemonster)"> -->
+    <input type="submit" value="Post Your Question">
+  </form>
+    <% @errors.each do |error| %>
+      <%= error %>
+    <% end %>
+</div>

@@ -1,3 +1,5 @@
+<%= erb :'_errors' %>
+
 <div class='question_page'>
   <div class='question'>
     <h1> <%= @question.title %></h1>
@@ -34,6 +36,12 @@
         <div class='vote-count'><p><%= answer.votes.count %></p></div>
         <div class='answerer-box'>
           <p><%= answer.answerer.try(:display_name) %></p>
+        </div>
+        <div class='comment-form'>
+          <form action='/questions/<%= @question.id %>/answers/<%=answer.id %>/comments' method='POST' id='comment-form'>
+            <textarea name="comment[body]"></textarea>
+            <input type="submit" value="Comment">
+          </form>
         </div>
         <hr>
         <% end %>

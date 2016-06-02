@@ -1,10 +1,14 @@
 <div>
   <h1>All Users</h1>
+  <div id='user-list'>
     <ul>
       <% User.all.each do |user| %>
-      <li><a href = "/users/<%=user.id%>/profile"><%= user.display_name %></a></li>
-      <li><p><%=user.email%></p></li>
+      <li><div id='user-list-item'>
+        <a href = "/users/<%=user.id%>/profile"><%= user.display_name %></a><br>
+        <p><%=user.email%></p>
+      </div></li>
       <br>
       <% end %>
     </ul>
+  </div>
 </div>

@@ -56,3 +56,7 @@ post '/users/:id/profile' do
     erb :'users/edit'
   end
 end
+
+get 'users/:id/activity' do
+  erb :'users/activity'
+end

@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 
   $(".vote-form").on("submit", function(event) {
@@ -17,4 +18,3 @@ $(document).ready(function() {
     });
   });
 });
-

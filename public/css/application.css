@@ -3,14 +3,20 @@ ul {
   list-style-type: none;
 }
 
-#nav-header {
+#user-header {
   padding-left: 60%;
   background-color: black;
 }
 
-#nav-header a {
+#user-header a {
   color: white;
 }
+
+#nav-header {
+  height: 96px;
+  border-bottom: solid #cccccc 1px;
+}
+
 
 #form-container {
   width: 460px;
@@ -34,20 +40,17 @@ ul {
 #profile-container {
   margin: 10%;
   height: 600px;
-  border: dashed 1px;
 }
 
 .subheader {
   margin: 20px;
   height: 40px;
-  border: solid blue 1px;
 }
 
 .user-picture {
-  border: dashed red 1px;
   margin: 20px;
   height: 240px;
-  width: 200px;
+  width: 240px;
   float: left;
 
 }
@@ -55,6 +58,41 @@ ul {
 .new_comment_form {
   display: none;
 }
+
+.user-picture img {
+  margin: 5px;
+}
+
+#user-list {
+  column-count: 3;
+  height: 90%;
+}
+
+#logo-box {
+  float:left;
+  padding: 20px;
+  height: 90px;
+  width: 300px;
+}
+
+#nav-buttons {
+  padding: 36px 57px 0 0;
+  float:right;
+}
+
+#nav-buttons button {
+  margin: 0px 2px;
+}
+
+#activity-answers {
+  width: 400px;
+  float: left;
+  display: inline-block;
+}
+
+#activity-questions {
+  width: 400px;
+  display: inline-block;
 
 .answer-body > p {
   display: inline;

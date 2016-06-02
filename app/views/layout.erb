@@ -7,6 +7,7 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/questions.css">
   <!--
     application.css is where you put your styles
   -->
@@ -19,6 +20,7 @@
   <title></title>
 </head>
 <body>
+  <%= erb(:"_user_control") %>
   <%= erb(:"_navigation") %>
   <%= yield %>
 </body>

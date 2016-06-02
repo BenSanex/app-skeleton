@@ -1,5 +1,5 @@
 get '/questions' do
-
+  puts current_user
   @questions = Question.all
   erb :'questions/index'
 end

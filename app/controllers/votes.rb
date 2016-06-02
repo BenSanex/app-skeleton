@@ -4,12 +4,13 @@
 
 post '/questions/:id/vote' do
   question = Question.find(params[:id])
-  question.votes.create(value: params[:vote].to_i, voter: current_user)
+  vote = Vote.find_or_create_by(voter: current_user, votable: question)
+  vote.update(value: params[:vote].to_i)
   if request.xhr?
     content_type :json
     { points: question.points }.to_json
   else
-    redirect "/questions"
+    redirect "/questions/#{question.id}"
   end
 end
 

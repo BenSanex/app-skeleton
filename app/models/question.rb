@@ -7,6 +7,7 @@ class Question < ActiveRecord::Base
   has_many :votes, as: :votable
   has_many :comments, as: :commentable
   has_many :tag_questions, class_name: 'TagQuestion'
+  has_many :tags, through: :tag_questions
 
   validates_presence_of :author, :body
   validates :body, length: { minimum: 10 }

@@ -5,5 +5,5 @@ class Answer < ActiveRecord::Base
   has_many :votes, as: :votable
 
   validates_presence_of :answerer, :body, :question
-  validates :body, length: { minimum: 10 }
+  validates :body, length: { minimum: 5 }
 end

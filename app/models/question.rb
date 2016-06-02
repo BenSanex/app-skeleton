@@ -9,6 +9,10 @@ class Question < ActiveRecord::Base
   has_many :questiontags
 
   validates_presence_of :author, :body
-  validats :tags, numericality: { less_than_or_equal_to: 5 }
-  validats :body, length: { minimum: 10 }
+  validates :body, length: { minimum: 10 }
+  validate :validate_tag_count
+
+  def validate_tag_count
+    errors.add(:questiontags, "too much") if questiontags.size > 5
+  end
 end

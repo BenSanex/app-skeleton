@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :favorited_questions, through: :favorites, source: :question
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true
+  validates :email, uniqueness: true
 
   def password=(plaintext_password)
     @plaintext_password = plaintext_password

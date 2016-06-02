@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   has_many :questions
   has_many :answers
-  has_many :votes, as: :votable
+  has_many :votes, foreign_key: :voter_id
   has_many :items_voted_on, through: :votes, source: :votable
   has_many :comments, as: :commentable
   has_many :favorites
@@ -25,9 +25,7 @@ class User < ActiveRecord::Base
     self.password == password
   end
 
-  def voted_on?(votable_obj)
-    
+  def voted?(votable_obj, value)
+    !!votes.find_by(votable: votable_obj, value: value)
   end
-
-
 end

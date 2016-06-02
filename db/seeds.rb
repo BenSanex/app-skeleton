@@ -29,7 +29,8 @@ users.each do |user|
   questions.each do |question|
     Vote.create!(
       voter: user,
-      votable: question)
+      votable: question,
+      value: [-1, 1].sample)
   end
 end
 

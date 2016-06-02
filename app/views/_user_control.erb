@@ -1,0 +1,13 @@
+<div id="user-header">
+
+<% if logged_in? %>
+  <a href="/users/<%= current_user.id %>/profile"><%= current_user.display_name %></a>
+  <a href="/users/logout">log out</a>
+  <a href="/">home</a>
+<% else %>
+  <a href="/users/signup">sign up</a>
+  <a href="/users/login">log in</a>
+  <a href="/">home</a>
+<% end %>
+
+</div>

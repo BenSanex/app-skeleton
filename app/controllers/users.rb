@@ -1,3 +1,7 @@
+get '/users' do
+  erb :'users/index'
+end
+
 get '/users/signup' do
   erb :'users/signup'
 end
@@ -46,7 +50,7 @@ post '/users/:id/profile' do
   @user = User.find(params[:id])
   if current_user != nil && current_user.id == @user.id
     @user.update_attributes(params[:@user])
-    redirect "/users/#{user.id}/profile"
+    redirect "/users/#{@user.id}/profile"
   else
     @errors = ["You are not authorized to do that!"]
     erb :'users/edit'

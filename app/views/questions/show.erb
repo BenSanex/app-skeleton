@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class='author_box'>
-      <p><%= @question.author.try(:display_name) %></p>
+      <p><a href = "/users/<%=@question.author_id%>/profile"><%= @question.author.try(:display_name) %></a></p>
     </div>
     <div class='comment_link'>
       <a href='/'>Dont click, it goes home</a>
@@ -35,7 +35,7 @@
         <p><%= answer.body %></p>
         <div class='vote-count'><p><%= answer.votes.count %></p></div>
         <div class='answerer-box'>
-          <p><%= answer.answerer.try(:display_name) %></p>
+          <p><a href = "/users/<%=answer.answerer_id%>/profile"><%= answer.answerer.try(:display_name) %></a></p>
         </div>
         <div class='comment-form'>
           <form action='/questions/<%= @question.id %>/answers/<%=answer.id %>/comments' method='POST' id='comment-form'>

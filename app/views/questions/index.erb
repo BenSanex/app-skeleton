@@ -5,8 +5,8 @@
     <ul>
       <% @questions.each do |question| %>
         <div class='votes'>
-          
-          
+
+
           <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form upvote">
             <input type="hidden" name="vote" value="1">
             <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button downvote-button"></button>
@@ -26,7 +26,7 @@
           <% end %>
          </ul>
         </li>
-        <p>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
+        <p>asked by: <a href = "/users/<%=question.author_id%>/profile"><%= question.author.try(:display_name) || "Anonymous" %></a></p>
         <hr>
       <% end %>
     </ul>

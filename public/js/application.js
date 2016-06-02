@@ -1,4 +1,4 @@
-lines (23 sloc)  969 Bytes
+
 $(document).ready(function() {
 
   $(".vote-form").on("submit", function(event) {

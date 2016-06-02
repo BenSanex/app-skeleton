@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="favicon.png">
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -18,6 +19,7 @@
   <title></title>
 </head>
 <body>
+  <%= erb(:"_user_control") %>
   <%= erb(:"_navigation") %>
   <%= yield %>
 </body>

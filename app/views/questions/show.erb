@@ -38,5 +38,12 @@
         <hr>
         <% end %>
     </div>
+    <div class='answer-form'>
+      <form action='/questions/<%= @question.id %>/answers' method='POST' id='answer-form'>
+        <label>Answer</label>
+        <textarea name="answer[body]"></textarea>
+        <input type="submit" value="Post Your Answer">
+      </form>
+    </div>
   </div>
 </div>

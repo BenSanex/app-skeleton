@@ -16,8 +16,6 @@ get '/questions/:id' do
 end
 
 post '/questions' do
-  p '++++++++++++++++++++++++++++++++++++++++++'
-  p current_user.id
   @question = Question.new(params[:question])
   @question.author_id = current_user.id
   if @question.save
@@ -28,3 +26,15 @@ post '/questions' do
   end
 end
 
+post '/questions/:id/answers' do
+  @question = Question.find(params[:id])
+  @answer = Answer.new(params[:answer])
+  @answer.question_id = @question.id
+  @answer.answerer_id = current_user.id
+  if @answer.save
+    redirect "/questions/#{@question.id}"
+  else
+    @errors = @answer.errors.full_messages
+    erb :"questions/show"
+  end
+end

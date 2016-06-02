@@ -25,5 +25,9 @@ class User < ActiveRecord::Base
     self.password == password
   end
 
+  def voted_on?(votable_obj)
+    
+  end
+
 
 end

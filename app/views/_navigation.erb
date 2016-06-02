@@ -1,7 +1,7 @@
 <div id="nav-header">
 
 <% if logged_in? %>
-  <a href="/users/<%= current_user.id %>"><%= current_user.display_name %></a>
+  <a href="/users/<%= current_user.id %>/profile"><%= current_user.display_name %></a>
   <a href="/users/logout">log out</a>
   <a href="/">home</a>
 <% else %>

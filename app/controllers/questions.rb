@@ -29,8 +29,8 @@ end
 post '/questions/:id/answers' do
   @question = Question.find(params[:id])
   @answer = Answer.new(params[:answer])
-  @answer.question_id = @question.id
-  @answer.answerer_id = current_user.id
+  @answer.question = @question
+  @answer.answerer = current_user
   if @answer.save
     redirect "/questions/#{@question.id}"
   else
@@ -38,3 +38,24 @@ post '/questions/:id/answers' do
     erb :"questions/show"
   end
 end
+
+post '/questions/:id/answers/:answer_id/comments' do
+  @question = Question.find(params[:id])
+  @answer = Answer.find(params[:answer_id])
+  @comment = Comment.new(params[:comment])
+
+  @comment.commentable = @question
+  # above line do these:
+  # @comment.commentable_id = @question.id
+  # @comment.commentable_type = @question.class.name
+
+  @comment.commenter = current_user
+  if @comment.save
+    redirect "/questions/#{@question.id}"
+  else
+    @errors = @comment.errors.full_messages
+    erb :"questions/show"
+  end
+end
+
+

@@ -30,3 +30,23 @@ ul {
 .orange {
   color: orange;
 }
+
+#profile-container {
+  margin: 10%;
+  height: 600px;
+  border: dashed 1px;
+}
+
+.subheader {
+  margin: 20px;
+  height: 40px;
+  border: solid blue 1px;
+}
+
+.user-picture {
+  border: dashed red 1px;
+  margin: 20px;
+  height: 240px;
+  width: 200px;
+  float: left;
+}

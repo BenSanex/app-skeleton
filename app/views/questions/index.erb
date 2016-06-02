@@ -1,35 +1,30 @@
 
 <div>
-  <h1>All Questions</h1>
+  <h1 class='subheader'>All Questions</h1>
   <div class='question'>
-    <ul>
-      <% @questions.each do |question| %>
-        <div class='votes'>
-          
-          
-          <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form upvote">
-            <input type="hidden" name="vote" value="1">
-            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button downvote-button"></button>
-          </form>
-          <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form downvote">
-            <input type="hidden" name="vote" value="-1">
-            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button"></button>
-          </form>
-
-          <span class="points"><%= question.points %></span></div>
-        <div class='answers'><%= question.answers.count %><p>answers</p></div>
-        <li>
-          <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
-          <ul>
-          <% question.tags.each do |tag| %>
-            <li> <%= tag.name %></li>
-          <% end %>
-         </ul>
-        </li>
-        <p>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
-        <hr>
+    <% @questions.each do |question| %>
+    <div class='votes'>
+      <span class="points"><%= question.points %></span>
+      <p class='small-text'>votes</p>
+    </div>
+    <div class='answers'>
+      <span class='answer-count'><%= question.answers.count %></span>
+      <p class='small-text'>answers</p>
+    </div>
+    <span class="question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></span>
+    <div>
+      <p class='small-text author'>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
+    </div>
+    <div class='question-tags'>
+      <ul>
+        <% question.tags.each do |tag| %>
+          <li> test<%= tag.name %></li>
+        <% end %>
+      </ul>
+    </div>
+      <hr>
       <% end %>
-    </ul>
   </div>
 </div>
+
 

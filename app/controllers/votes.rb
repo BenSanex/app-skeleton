@@ -4,7 +4,7 @@
 
 post '/questions/:id/vote' do
   question = Question.find(params[:id])
-  question.votes.create(value: params[:vote].to_i)
+  question.votes.create(value: params[:vote].to_i, voter: current_user)
   if request.xhr?
     content_type :json
     { points: question.points }.to_json
@@ -13,13 +13,13 @@ post '/questions/:id/vote' do
   end
 end
 
-delete '/questions/:id' do
-  # write logic for deleting questions here.
-end
+# delete '/questions/:id' do
+#   # write logic for deleting questions here.
+# end
 
-post '/questions' do
-  Question.create( title: params[:title],
-               username: Faker::Internet.user_name,
-               comment_count: rand(1000) )
-  redirect '/questions'
-end
+# post '/questions' do
+#   Question.create( title: params[:title],
+#                username: Faker::Internet.user_name,
+#                comment_count: rand(1000) )
+#   redirect '/questions'
+# end

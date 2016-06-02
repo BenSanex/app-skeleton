@@ -1,0 +1,47 @@
+.question {
+  padding-left: 50px;
+  width: 900px;
+}
+
+h1 {
+    color: #242729;
+    font-size: 18px;
+    line-height: 2.22;
+  }
+
+.votes, .answers {
+  display: inline-block;
+  width: 60px;
+}
+
+.question-title {
+  font-size: small;
+  width: 500px;
+  display: inline-block important!;
+}
+
+li {
+  list-style-type: none;
+}
+
+.small-text {
+  font-size: x-small;
+}
+
+.author {
+  display: inline-block;
+  width: 200px;
+  float: right;
+}
+
+.points {
+  padding-left: 10px;
+}
+
+.answer-count {
+  padding-left: 20px;
+}
+
+.answers {
+  padding-right: 20px;
+}

@@ -27,6 +27,10 @@ ul {
 
 }
 
+.orange {
+  color: orange;
+}
+
 #profile-container {
   margin: 10%;
   height: 600px;
@@ -46,9 +50,3 @@ ul {
   width: 200px;
   float: left;
 }
-
-
-
-
-
-

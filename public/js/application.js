@@ -1,4 +1,3 @@
-lines (23 sloc)  969 Bytes
 $(document).ready(function() {
 
   $(".vote-form").on("submit", function(event) {
@@ -11,9 +10,9 @@ $(document).ready(function() {
 
     var request = $.ajax({url: url, method: method, data: data});
 
-    request.done(function(post) {
-      form.closest("article").find(".points").html(post.points);
-      // form.find(".upvote-button").css({color: "red"});
+    request.done(function(question) {
+      form.closest("div").find(".points").html(question.points);
+      form.find("button").toggleClass("orange");
     });
   });
 });

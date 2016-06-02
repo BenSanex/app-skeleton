@@ -47,6 +47,35 @@ ul {
   float: left;
 }
 
+.new_comment_form {
+  display: none;
+}
+
+.answer-body > p {
+  display: inline;
+  width: 300px;
+  color: red;
+}
+
+.vote-button{
+  display: inline;
+  background-color: white;
+  border: none;
+  color: #6a737c;
+}
+
+.vote-box {
+  display: inline;
+}
+
+.vote-count {
+  display: inline;
+}
+
+.vote-count > p {
+  display: inline;
+  padding-left: 15px;
+}
 
 
 

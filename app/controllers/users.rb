@@ -43,7 +43,12 @@ get '/users/:id/edit' do
 end
 
 post '/users/:id/profile' do
-  user = User.find(params[:id])
-  user.update_attributes(params[:@user])
-  redirect "/users/#{user.id}/profile"
+  @user = User.find(params[:id])
+  if current_user != nil && current_user.id == @user.id
+    @user.update_attributes(params[:@user])
+    redirect "/users/#{user.id}/profile"
+  else
+    @errors = ["You are not authorized to do that!"]
+    erb :'users/edit'
+  end
 end

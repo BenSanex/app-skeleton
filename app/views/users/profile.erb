@@ -1,8 +1,12 @@
+<%= erb :'_errors' %>
+
 <div id="profile-container">
   <div class="subheader">
     <a href="/users/<%= @user.id %>/profile">Profile</a>
     <a href="/users/<%= @user.id %>/activity">Activity</a>
-    <a href="/users/<%= @user.id %>/edit">Edit Profile & Settings</a>
+    <% if current_user != nil && current_user.id == @user.id %>
+      <a href="/users/<%= @user.id %>/edit">Edit Profile & Settings</a>
+    <% end %>
   </div>
   <div class="user-card">
     <div class="user-picture">

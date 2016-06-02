@@ -32,6 +32,14 @@ get '/users/logout' do
   redirect '/questions'
 end
 
-get '/users/:id' do
+get '/users/:id/profile' do
+  @user = User.find(params[:id])
   erb :'users/profile'
 end
+
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  erb :'users/edit'
+end
+
+

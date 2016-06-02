@@ -1,1 +1,17 @@
-
+<div id="profile-container">
+  <div class="subheader">
+    <a href="/users/<%= @user.id %>/profile">Profile</a>
+    <a href="/users/<%= @user.id %>/activity">Activity</a>
+    <a href="/users/<%= @user.id %>/edit">Edit Profile & Settings</a>
+  </div>
+  <div class="user-card">
+    <div class="user-picture">
+    </div>
+      <div class="user-info">
+        <h1><%=@user.display_name%></h1>
+        <h3><%=@user.title%></h3>
+        <h3><%=@user.location%></h3>
+        <p><%=@user.about_me%></p>
+      </div>
+  </div>
+</div>

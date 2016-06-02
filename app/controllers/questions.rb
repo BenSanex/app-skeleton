@@ -43,18 +43,25 @@ post '/questions/:id/answers/:answer_id/comments' do
   @question = Question.find(params[:id])
   @answer = Answer.find(params[:answer_id])
   @comment = Comment.new(params[:comment])
-
-  @comment.commentable = @question
+  @comment.commentable = @answer
   # above line do these:
   # @comment.commentable_id = @question.id
   # @comment.commentable_type = @question.class.name
-
   @comment.commenter = current_user
-  if @comment.save
-    redirect "/questions/#{@question.id}"
+  if request.xhr?
+    if @comment.save
+      200
+    else
+      @errors = @comment.errors.full_messages
+      return false
+    end
   else
-    @errors = @comment.errors.full_messages
-    erb :"questions/show"
+    if @comment.save
+      redirect "/questions/#{@question.id}"
+    else
+      @errors = @comment.errors.full_messages
+      erb :"questions/show"
+    end
   end
 end
 

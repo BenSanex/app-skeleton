@@ -4,7 +4,19 @@
   <div class='question'>
     <ul>
       <% @questions.each do |question| %>
-        <div class='votes'><%= question.votes.count %><p>votes</p></div>
+        <div class='votes'>
+          
+          
+          <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form upvote">
+            <input type="hidden" name="vote" value="1">
+            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button downvote-button"></button>
+          </form>
+          <form method="post" action='/questions/<%= question.id %>/vote' class="inline vote-form downvote">
+            <input type="hidden" name="vote" value="-1">
+            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button"></button>
+          </form>
+
+          <span class="points"><%= question.points %></span></div>
         <div class='answers'><%= question.answers.count %><p>answers</p></div>
         <li>
           <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>

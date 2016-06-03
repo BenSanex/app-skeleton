@@ -10,7 +10,7 @@
         <li>
           <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
          <div class="question-index-taglist">
-          <% @question.tags.each do |tag| %>
+          <% question.tags.each do |tag| %>
             <a href="/questions/tagged/<%= tag.name %>" class="question-tag tag-<%= tag.id %>" title="" rel="tag"><%= tag.name %></a>
             <br>
           <% end %>

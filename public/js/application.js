@@ -11,10 +11,11 @@ $(document).ready(function() {
 
     var request = $.ajax({url: url, method: method, data: data});
 
-    request.done(function(question) {
-      form.closest("div").find(".points").html(question.points);
-      form.find("button").toggleClass("orange");
-      form.siblings("form").find('button').removeClass("orange");
+    request.done(function(votable) {
+      form.closest("div").find(".points").html(votable.points);
+      if (votable.logged_in) { form.find("button").toggleClass("orange");
+        form.siblings("form").find('button').removeClass("orange");
+      }
     });
   });
 });

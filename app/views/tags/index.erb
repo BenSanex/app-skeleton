@@ -1,0 +1,11 @@
+<div class="tag-index">
+  <h1>Tags</h1>
+  <br>
+  <br>
+
+  <% @tags.each do |tag| %>
+    <span class="tag-index-item <%= tag.id %>"><a href="/questions/tagged/<%= tag.name %>" class="post-tag" title="" rel="tag"><%= tag.name %></a>
+    <br>
+    </span>
+  <% end %>
+</div>

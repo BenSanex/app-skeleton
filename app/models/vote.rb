@@ -4,6 +4,6 @@ class Vote < ActiveRecord::Base
 
   validates :voter, 
             presence: true, 
-            uniqueness: { scope: :votable, message: "Only one vote per votable item." }
+            uniqueness: { scope: [:votable_id, :votable_type], message: "Only one vote per votable item." }
   validates :votable, presence: true
 end

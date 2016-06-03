@@ -1,22 +1,22 @@
 <div id='nav-header'>
   <div id='logo-box'>
-    <img src='/images/so-logo_edited.png' width='300px'>
+    <img src='/images/so-logo_edited.png' width='200px'>
   </div>
   <div id='nav-buttons'>
     <table border="0">
       <tr>
         <td><form method="get" action="/questions">
-          <button type="submit">Questions</button>
+          <button class='nav_button' type="submit">Questions</button>
         </form></td>
         <td><form method="get" action="/tags">
-          <button type="submit">Tags</button>
+          <button class='nav_button' type="submit">Tags</button>
         </form></td>
         <td><form method="get" action="/users">
-          <button type="submit">Users</button>
+          <button class='nav_button' type="submit">Users</button>
         </form></td>
         <% if current_user != nil %>
         <td><form method="get" action="/questions/new">
-          <button type="submit">Ask Question</button>
+          <button class='nav_button' type="submit">Ask Question</button>
         </form></td>
         <% end %>
       </tr>

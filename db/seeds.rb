@@ -32,5 +32,11 @@ users.each do |user|
       votable: question,
       value: [-1, 1].sample)
   end
+  Answer.all.each do |answer|
+    Vote.create!(
+      voter: user,
+      votable: answer,
+      value: [-1, 1].sample)
+  end
 end
 

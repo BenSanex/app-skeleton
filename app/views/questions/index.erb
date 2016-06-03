@@ -24,6 +24,12 @@
           <% end %>
         </ul>
       </div>
+       <div class="question-index-taglist">
+          <% question.tags.each do |tag| %>
+            <a href="/questions/tagged/<%= tag.name %>" class="question-tag tag-<%= tag.id %>" title="" rel="tag"><%= tag.name %></a>
+            <br>
+          <% end %>
+        </div>
         <hr>
         <% end %>
     </div>

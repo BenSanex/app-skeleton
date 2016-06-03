@@ -1,0 +1,28 @@
+<!-- Copied from questions/index - update when appropriate -->
+<div class=""> 
+  <h1 class='subheader'>Tagged Questions</h1>
+  <br>
+  <h3><%= @tag.name %></h3>
+  <br>
+  <br>
+  <div class='question'>
+    <ul>
+      <% @tag.questions.each do |question| %>
+        <div class='votes'>
+
+         <span class="points"><%= question.points %> points</span></div>
+        <div class='answers'><%= question.answers.count %><p>answers</p></div>
+        <li>
+          <h3><a href="/questions/<%= question.id %>"><%= question.title %></a></h3>
+          <ul>
+          <% question.tags.each do |tag| %>
+            <li> <%= tag.name %></li>
+          <% end %>
+         </ul>
+        </li>
+        <p>asked by: <a href = "/users/<%=question.author_id%>/profile"><%= question.author.try(:display_name) || "Anonymous" %></a></p>
+        <hr>
+
+      <% end %>
+  </div>
+</div>

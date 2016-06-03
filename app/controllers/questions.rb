@@ -19,12 +19,13 @@ get '/questions/:id' do
 end
 
 post '/questions' do
-  tags = []
-  params[:question][:tags].split(", ").each { |tag| tags << Tag.new(name: tag) }
-  params[:question][:tags] = tags
-
   @question = Question.new(params[:question])
   @question.author = current_user
+
+  q_tags = []
+  params[:question_tags].split(", ").each do |tag| tags << TagQuestion.new(question: @question, tag: Tag.find_or_create_by(name: tag))
+  end
+
   if @question.save
     redirect "/questions/#{@question.id}"
   else

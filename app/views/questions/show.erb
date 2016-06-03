@@ -10,12 +10,12 @@
     <div class='votes'>
       <form method="post" action='/questions/<%= @question.id %>/vote' class="inline vote-form upvote">
         <input type="hidden" name="vote" value="1">
-        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if current_user.voted?(@question, 1) %>"></button>
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if logged_in? && current_user.voted?(@question, 1) %>"></button>
       </form>
 
       <form method="post" action='/questions/<%= @question.id %>/vote' class="inline vote-form downvote">
         <input type="hidden" name="vote" value="-1">
-        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if current_user.voted?(@question, -1) %>"></button>
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if logged_in? && current_user.voted?(@question, -1) %>"></button>
       </form>
       <span class="points"><%= @question.points %></span>
       <span>points</span>
@@ -57,12 +57,12 @@
           <div class='answer-votes'>
             <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form upvote">
               <input type="hidden" name="vote" value="1">
-              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if current_user.voted?(answer, 1) %>"></button>
+              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if logged_in? && current_user.voted?(answer, 1) %>"></button>
             </form>
 
             <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form downvote">
               <input type="hidden" name="vote" value="-1">
-              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if current_user.voted?(answer, -1) %>"></button>
+              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if logged_in? && current_user.voted?(answer, -1) %>"></button>
             </form>
             <span class="points"><%= answer.points %></span>
           </div>

@@ -12,7 +12,12 @@ post '/questions/:question_id/vote' do
   end
   if request.xhr?
     content_type :json
-    { points: question.points }.to_json
+    if logged_in?
+      login = true
+    else
+      login = false
+    end
+    { points: question.points, logged_in: login }.to_json
   else
     redirect "/questions/#{question.id}"
   end

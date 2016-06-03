@@ -1,6 +1,6 @@
 class Tag < ActiveRecord::Base
-  has_many :tagsquestions
+  has_many :tagsquestions, class_name: 'TagQuestion'
+  has_many :questions, through: :tagsquestions
 
-  validates_presence_of :name
-  validates_uniqueness_of :name
+  validates :name, presence: true, uniqueness: true
 end

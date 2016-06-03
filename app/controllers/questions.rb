@@ -19,8 +19,12 @@ get '/questions/:id' do
 end
 
 post '/questions' do
+  tags = []
+  params[:question][:tags].split(", ").each { |tag| tags << Tag.new(name: tag) }
+  params[:question][:tags] = tags
+
   @question = Question.new(params[:question])
-  @question.author_id = current_user.id
+  @question.author = current_user
   if @question.save
     redirect "/questions/#{@question.id}"
   else
@@ -67,5 +71,3 @@ post '/questions/:id/answers/:answer_id/comments' do
     end
   end
 end
-
-

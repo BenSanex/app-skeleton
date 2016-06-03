@@ -13,7 +13,7 @@ $(document).ready(function() {
 
     request.done(function(votable) {
       form.closest("div").find(".points").html(votable.points);
-      if (votable.login) { form.find("button").toggleClass("orange");
+      if (votable.logged_in) { form.find("button").toggleClass("orange");
         form.siblings("form").find('button').removeClass("orange");
       }
     });

@@ -19,11 +19,15 @@ ul {
 
 #user-buttons a {
   font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-size: 1em;
   color: white;
   text-decoration: none;
   padding-top: 5px;
   padding: 0px 5px;
+  z-index: 10;
+  cursor: pointer;
 }
+
 
 #nav-header {
   height: 96px;
@@ -60,11 +64,13 @@ ul {
 }
 
 .subheader a {
-  border-top: solid #cccccc 1px;
+  border-top: solid orange 3px;
   border-left: solid #cccccc 1px;
   border-right: solid #cccccc 1px;
   text-decoration: none;
   padding: 5px;
+  font-color: #333333;
+  font-size: .8em;
 }
 
 .subheader a:hover {

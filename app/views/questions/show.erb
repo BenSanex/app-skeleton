@@ -24,12 +24,13 @@
     <div class='question-body'>
       <p><%= @question.body %></p>
     </div>
-
-     <div class="post-taglist">
-      <% @question.tags.each do |tag| %>
-        <a href="/questions/tagged/<%= tag.name %>" class="post-tag" title="" rel="tag"><%= tag.name %></a>
-        <br>
-      <% end %>
+    <br>
+    <div class='question-tags'>
+        <ul>
+          <% @question.tags.each do |tag| %>
+            <li class='small-text tag'><%= tag.name %></li>
+          <% end %>
+        </ul>
     </div>
 
     <div class='author_box small-text author'>

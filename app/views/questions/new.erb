@@ -1,10 +1,10 @@
 <%= erb :'_errors' %>
 
-<div>
+<div id="question-form">
   <form action='/questions' method='POST' id='question-form'>
-    <label>Title</label><br>
-    <input type='text' name="question[title]" placeholder="What's your snack question? Be specific."><br><br>
-    <textarea name="question[body]"></textarea>
+    <label>Title</label>
+    <input type='text' name="question[title]" placeholder="What's your snack question? Be specific."><br>
+    <textarea name="question[body]" cols="92" rows="15"></textarea>
     <hr>
     <hr>
     <label>Tags</label>

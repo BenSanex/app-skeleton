@@ -13,8 +13,9 @@ $(document).ready(function() {
 
     request.done(function(votable) {
       form.closest("div").find(".points").html(votable.points);
-      form.find("button").toggleClass("orange");
-      form.siblings("form").find('button').removeClass("orange");
+      if (votable.login) { form.find("button").toggleClass("orange");
+        form.siblings("form").find('button').removeClass("orange");
+      }
     });
   });
 });

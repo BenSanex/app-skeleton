@@ -1,10 +1,9 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  has_many :questions
-  has_many :answers
-  has_many :votes, as: :votable
-  has_many :items_voted_on, through: :votes, source: :votable
+  has_many :questions, foreign_key: "author_id"
+  has_many :answers, foreign_key: "answerer_id"
+  has_many :votes, foreign_key: :voter_id
   has_many :comments, as: :commentable
   has_many :favorites
   has_many :favorited_questions, through: :favorites, source: :question
@@ -25,5 +24,7 @@ class User < ActiveRecord::Base
     self.password == password
   end
 
-
+  def voted?(votable_obj, value)
+    !!votes.find_by(votable: votable_obj, value: value)
+  end
 end

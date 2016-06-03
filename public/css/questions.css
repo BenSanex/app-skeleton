@@ -15,9 +15,15 @@ h1 {
 }
 
 .question-title {
+  display: inline-block !important;
   font-size: small;
-  width: 500px;
-  display: inline-block important!;
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.question-title a {
+  color: #005999;
 }
 
 li {
@@ -26,12 +32,23 @@ li {
 
 .small-text {
   font-size: x-small;
+  font-weight: 300;
+  color: #6a737c;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.points, .answer-count {
+  font-weight: 300;
+  color: #6a737c;
 }
 
 .author {
   display: inline-block;
   width: 200px;
   float: right;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .points {
@@ -44,4 +61,13 @@ li {
 
 .answers {
   padding-right: 20px;
+}
+
+.author, .question-tags {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+hr {
+  color: #005999;
 }

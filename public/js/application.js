@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 
   $(".vote-form").on("submit", function(event) {
@@ -13,7 +14,7 @@ $(document).ready(function() {
     request.done(function(question) {
       form.closest("div").find(".points").html(question.points);
       form.find("button").toggleClass("orange");
+      form.siblings("form").find('button').removeClass("orange");
     });
   });
 });
-

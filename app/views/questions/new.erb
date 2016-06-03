@@ -1,3 +1,5 @@
+<%= erb :'_errors' %>
+
 <div>
   <form action='/questions' method='POST' id='question-form'>
     <label>Title</label>
@@ -9,7 +11,4 @@
     <!-- <input type='text' name="question[tags]" placeholder="at least one tag such as (#snackinator, #cookiemonster)"> -->
     <input type="submit" value="Post Your Question">
   </form>
-    <% @errors.each do |error| %>
-      <%= error %>
-    <% end %>
 </div>

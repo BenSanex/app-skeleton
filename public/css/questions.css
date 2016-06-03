@@ -1,5 +1,16 @@
+.body {
+  margin-bottom: 100px;
+  }
+
 .question {
   padding-left: 30px;
+  width: 700px;
+}
+
+.question-show {
+
+  margin-left: auto;
+  margin-right: auto;
   width: 700px;
 }
 
@@ -17,8 +28,8 @@ li {
   text-align: left;
   color: #242729;
   font-size: 18px;
-  width: 300px;
   margin-left: 20px;
+  display: inline-block;
 }
 
 .votes, .answers {
@@ -38,6 +49,19 @@ li {
 
 .question-title a {
   color: #07C;
+}
+
+.question-body {
+  display: inline-block !important;
+  vertical-align: text-top;
+  width: 500px;
+}
+
+.votes-questions {
+  display: inline-block !important;
+  vertical-align: text-top;
+  width: 50px;
+  padding-right: 20px;
 }
 
 .small-text {
@@ -61,6 +85,12 @@ li {
   margin-bottom: 0px;
 }
 
+.author_box, .answerer-box {
+  background-color: #E1ECF4;
+  text-align: center;
+  color: #07C;
+}
+
 .points {
   padding-left: 10px;
 }
@@ -71,6 +101,11 @@ li {
 
 .answers {
   padding-right: 20px;
+}
+
+/*on the show page, all the answers*/
+.answer {
+  margin-left: 50px;
 }
 
 .author, .question-tags {
@@ -141,11 +176,22 @@ ul {
 }
 
 #question-form {
-  width: 500px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 #question-form textarea {
-  width: 498px;
+  width: 598px;
+}
+
+.vote-button {
+  background-color: white;
+  border: none;
+  color: #9fa6ad;
+}
+
+.answer-form {
+
+  margin-bottom: 200px;
 }

@@ -1,9 +1,12 @@
 <%= erb :'_errors' %>
 
 <div class='question_page'>
+
+
   <div class='question'>
     <h1> <%= @question.title %></h1>
     <hr>
+
     <div class='votes'>
       <form method="post" action='/questions/<%= @question.id %>/vote' class="inline vote-form upvote">
         <input type="hidden" name="vote" value="1">
@@ -17,55 +20,66 @@
       <span class="points"><%= @question.points %></span>
       <span>points</span>
     </div>
+
     <div class='favorite'>
       <p><%= @question.favorites.count %> favorites</p>
     </div>
+
     <div class='body'>
       <p><%= @question.body %></p>
     </div>
-    <div>
-      <ul>
-        <% @question.tags.each do |tag| %>
-        <li><%= tag.name %></li>
+
+     <div class="post-taglist">
+      <% @question.tags.each do |tag| %>
+        <a href="/questions/tagged/<%= tag.name %>" class="post-tag" title="" rel="tag"><%= tag.name %></a>
+        <br>
       <% end %>
-      </ul>
     </div>
+
     <div class='author_box'>
       <p><a href = "/users/<%=@question.author_id%>/profile"><%= @question.author.try(:display_name) %></a></p>
     </div>
+
     <div class='comment_link'>
       <a href='/'>Dont click, it goes home</a>
     </div>
   </div>
+
+
+
   <div class='answer'>
     <h2><%= @question.answers.count %> Answers</h2>
     <hr>
 
     <div class='answer-body'>
       <% @question.answers.each do |answer| %>
-        <div class='answer-votes'>
-          <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form upvote">
-            <input type="hidden" name="vote" value="1">
-            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if current_user.voted?(answer, 1) %>"></button>
-          </form>
+        <div class="answer <%= answer.id %>">/div>
+          <div class='answer-votes'>
+            <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form upvote">
+              <input type="hidden" name="vote" value="1">
+              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-up fa-3x vote-button upvote-button <%= "orange" if current_user.voted?(answer, 1) %>"></button>
+            </form>
 
-          <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form downvote">
-            <input type="hidden" name="vote" value="-1">
-            <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if current_user.voted?(answer, -1) %>"></button>
-          </form>
-          <span class="points"><%= answer.points %></span>
-        </div>
+            <form method="post" action='/answers/<%= answer.id %>/vote' class="inline vote-form downvote">
+              <input type="hidden" name="vote" value="-1">
+              <button type="submit" name="submit_param" value="submit_value" class="fa fa-caret-down fa-3x vote-button downvote-button <%= "orange" if current_user.voted?(answer, -1) %>"></button>
+            </form>
+            <span class="points"><%= answer.points %></span>
+          </div>
+
 
         <p><%= answer.body %></p>
         <div class='answerer-box'>
           <p><a href = "/users/<%=answer.answerer_id%>/profile"><%= answer.answerer.try(:display_name) %></a></p>
         </div>
+
         <div class='comment-body'>
           <% answer.comments.each do |comment| %>
             <p><%= comment.body %></p>
             <hr>
           <% end %>
         </div>
+
         <div class='comment-form'>
           <button class='new_comment_button' type='button'>Comment</button>
           <form class='new_comment_form' action='/questions/<%= @question.id %>/answers/<%=answer.id %>/comments' method='POST'>
@@ -75,13 +89,16 @@
         </div>
         <hr>
       <% end %>
-        </div>
-        <div class='answer-form'>
-          <form action='/questions/<%= @question.id %>/answers' method='POST' id='answer-form'>
-            <label>Answer</label>
-            <textarea name="answer[body]"></textarea>
-            <input type="submit" value="Post Your Answer">
-          </form>
-        </div>
+    </div>
+
+
+
+    <div class='answer-form'>
+      <form action='/questions/<%= @question.id %>/answers' method='POST' id='answer-form'>
+        <label>Answer</label>
+        <textarea name="answer[body]"></textarea>
+        <input type="submit" value="Post Your Answer">
+      </form>
+    </div>
   </div>
 </div>

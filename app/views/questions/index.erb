@@ -10,9 +10,10 @@
       <span class='answer-count'><%= question.answers.count %></span>
       <p class='small-text'>answers</p>
     </div>
-    <span class="question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></span>
-    <div>
-      <p class='small-text author'>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
+    <div class="question-title"><a href="/questions/<%= question.id %>"><%= question.title %></a></div>
+    <br>
+    <div class='author'>
+      <p class='small-text'>asked by: <%= question.author.try(:display_name) || "Anonymous" %></p>
     </div>
     <div class='question-tags'>
       <ul>

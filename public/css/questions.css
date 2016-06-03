@@ -120,9 +120,28 @@ ul {
   padding-left: 130px;
   margin-top: 0px;
 }
+.tag-list {
+  display: inline-block;
+  float: left;
+  background-color: #E1ECF4;
+  color: #33658a;
+  position: relative;
+  padding: .4em .9em;
+  margin: 2px 2px 2px 0;
+  font-size: 11px;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
 
+}
 
-.tag {
+.columns {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+.tag, .question-tags a {
   display: inline-block;
   width: 50px;
   float: left;
@@ -136,8 +155,6 @@ ul {
   white-space: nowrap;
   text-decoration: none;
   text-align: center;
-  border-radius: 0;
-  transition: all .15s
 }
 
 .tag:hover {

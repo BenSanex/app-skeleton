@@ -28,6 +28,10 @@ ul {
   cursor: pointer;
 }
 
+#user-buttons a:hover {
+  color: orange;
+}
+
 
 #nav-header {
   height: 96px;
@@ -158,6 +162,3 @@ ul {
   display: inline;
   padding-left: 15px;
 }
-
-
-
